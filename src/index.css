@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root {
+  --primary-font-color: #ffffff;
+  --primary-highlight-color: #ffaa00;
+  --secondary-highlight-color: #15df5c;
+  --glassmorphism: #2d2d2d76;
+  --sm-border: 5px;
+  --md-border: 10px;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-font-color);
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100svw;
+  min-height: 100svh;
+  background-color: #000000;
+}
