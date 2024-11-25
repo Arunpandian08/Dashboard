@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
+import Loader from './Components/Loader/Loader'
+
+const Navbar = lazy(() => import('./Components/Navbar/Navbar'))
 
 const App = () => {
   return (
-    <div>App</div>
+    <Suspense fallback={<Loader />}>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        Dashboard
+      </main>
+    </Suspense>
   )
 }
 
