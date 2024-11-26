@@ -1,0 +1,113 @@
+.post-list {
+    margin-bottom: 1rem;
+}
+
+.post-nav {
+    margin: 1.5rem 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-nav h4 {
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+}
+
+.navigator-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.navigator-icons button {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-highlight-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.navigator-icons button:active {
+    scale: 0.96;
+}
+
+.navigator-icons button:hover {
+    background-color: var(--secondary-font-color);
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.card {
+    position: relative;
+    width: 290px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--secondary-font-color);
+    padding: 10px;
+    border: 2px solid var(--primary-highlight-color);
+    border-radius: var(--md-border);
+}
+
+.card .card-title:hover {
+    color: var(--primary-highlight-color);
+    cursor: pointer;
+}
+
+.card .card-title {
+    font-size: 15px;
+}
+
+.post-name {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card .icon {
+    background-color: var(--primary-highlight-color);
+    padding: 0 10px;
+    border-radius: 50px;
+}
+
+.card .icon i {
+    font-size: 5vw;
+}
+
+@media screen and (max-width:768px) {
+    .card .icon i {
+        font-size: 10vw !important;
+    }
+}
+
+.card .notifier1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #2be24c;
+    box-shadow: 0 0 5px #01bb01;
+    border-radius: 50px;
+}
+
+.card .notifier2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff0404;
+    box-shadow: 0 0 5px #f12929;
+    border-radius: 50px;
+}

@@ -11,7 +11,7 @@ export const BASE_URL = 'https://jsonplaceholder.typicode.com/'
 
 const App = () => {
   const [userData, setUserData] = useState([])
-  const [selectedUser, setSelectedUser] = useState(1)
+  const [selectedUser, setSelectedUser] = useState(null)
   const [data, setData] = useState({ posts: [], comments: [], todos: [] })
   const [isLoading, setIsLoading] = useState(false)
 
@@ -57,10 +57,6 @@ const App = () => {
     }
   }
 
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-
   return (
     <Suspense fallback={<Loader />}>
       <header>
@@ -75,6 +71,7 @@ const App = () => {
                 userData={userData}
                 setSelectedUser={setSelectedUser}
                 data={data}
+                isLoading={isLoading}
               />
             }
           />

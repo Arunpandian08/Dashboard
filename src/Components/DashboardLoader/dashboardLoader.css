@@ -1,0 +1,23 @@
+.dashboard-loader {
+    width: 100%;
+    height: calc(100svh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:
+        radial-gradient(farthest-side, #B28A44 95%, #0000) 50% 1px/12px 12px no-repeat,
+        radial-gradient(farthest-side, #0000 calc(100% - 14px), #ffffff 0);
+    animation: s9 1s infinite linear;
+}
+
+@keyframes s9 {
+    to {
+        transform: rotate(1turn)
+    }
+}

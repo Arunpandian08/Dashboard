@@ -1,14 +1,15 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './navbar.css'
 import userIcon from '../../assets/user-img.jpg'
 
-const Navbar = ({selectedUser}) => {
+const Navbar = ({ selectedUser }) => {
     return (
         <nav>
             <div className='navbar'>
                 <div className='row-wrapper'>
                     <div className="navbar-brand">
-                        <h2 className="brand-name">DASHBOARD</h2>
+                        <NavLink to='/' className="brand-name">DASHBOARD</NavLink>
                     </div>
                     <form className="search">
                         <input type="text" className="input" />
@@ -25,7 +26,11 @@ const Navbar = ({selectedUser}) => {
                             <li><i className="bi bi-gear-fill settings"></i></li>
                         </ul>
                         <ul className='user-detail'>
-                            <li>{selectedUser?.name}</li>
+                            {selectedUser ? (
+                                <li key={selectedUser.id}>
+                                    {selectedUser.name}
+                                </li>
+                            ) : ('User')}
                             <li><img src={userIcon} width='50' alt="user-profile" /></li>
                         </ul>
                     </div>

@@ -3,7 +3,6 @@ nav {
     min-height: 70px;
     display: flex;
     align-items: center;
-    /* background-color: aquamarine; */
     z-index: 2;
 }
 
@@ -16,7 +15,8 @@ nav {
 }
 
 .brand-name {
-    font-size: clamp(1.8rem, 10%, 1rem);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
 }
 
 .row-wrapper {
@@ -31,15 +31,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--glassmorphism);
+    background-color: var(--secondary-font-color);
     border-radius: var(--lg-border);
     padding: 5px 10px;
+    border: 2px solid var(--primary-highlight-color);
     transition: all 0.9s ease-in-out;
 }
 
 .search:focus-within {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    outline: 2px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 5px var(--primary-highlight-color);
+    outline: 1px solid var(--primary-highlight-color);
 }
 
 .input {
@@ -59,6 +60,7 @@ nav {
 
     & i {
         font-size: 1.2rem;
+        color: var(--primary-highlight-color);
     }
 
     & img {
@@ -79,14 +81,17 @@ nav {
     width: 8px;
     height: 8px;
     border-radius: 50px;
-    background-color: red;
+    background-color: #ff0000;
+    box-shadow: 0 0 5px #ff0000;
+
 }
 
 .notification,
 .settings {
-    background-color: var(--glassmorphism);
+    background-color: var(--secondary-font-color);
     backdrop-filter: blur(15px);
     padding: 5px 10px;
+    border: 2px solid var(--primary-highlight-color);
     border-radius: 50px;
 }
 
