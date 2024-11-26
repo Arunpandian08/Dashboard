@@ -18,7 +18,10 @@ const Navbar = () => {
                 <div className="user-options">
                     <div className="row-wrapper">
                         <ul className='user-option-list'>
-                            <li><i className="bi bi-bell-fill notification"></i></li>
+                            <li>
+                                <i className="bi bi-bell-fill notification"></i>
+                                <span></span>
+                            </li>
                             <li><i className="bi bi-gear-fill settings"></i></li>
                         </ul>
                         <ul className='user-detail'>
