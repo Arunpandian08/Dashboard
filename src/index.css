@@ -4,8 +4,8 @@
 :root {
   --primary-font-color: #000000;
   --secondary-font-color: #ffffff;
-  --primary-highlight-color: #ffaa00;
-  --secondary-highlight-color: #15df5c;
+  --primary-highlight-color: #15df5c;
+  --secondary-highlight-color: #ffaa00;
   --glassmorphism: #2d2d2d76;
   --sm-border: 5px;
   --md-border: 10px;
