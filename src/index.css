@@ -2,13 +2,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
-  --primary-font-color: #ffffff;
-  --secondary-font-color: #000000;
+  --primary-font-color: #000000;
+  --secondary-font-color: #ffffff;
   --primary-highlight-color: #ffaa00;
   --secondary-highlight-color: #15df5c;
   --glassmorphism: #2d2d2d76;
   --sm-border: 5px;
   --md-border: 10px;
+  --lg-border: 20px;
 }
 
 *,
@@ -41,6 +42,8 @@ body {
   width: 100%;
   min-height: 100svh;
   overflow-x: hidden;
-  background-color: #000000;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  
   color: var(--primary-font-color);
 }

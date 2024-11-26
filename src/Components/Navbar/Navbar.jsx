@@ -10,25 +10,19 @@ const Navbar = () => {
                     <div className="navbar-brand">
                         <h2 className="brand-name">DASHBOARD</h2>
                     </div>
-                    <div className="dropdown">
-                        <button className="drop-btn">Select user &nbsp;
-                            <i className="bi bi-chevron-down"></i>
-                        </button>
-                        <div className="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
+                    <form className="search">
+                        <input type="text" className="input" />
+                        <i className="bi bi-search"></i>
+                    </form>
                 </div>
                 <div className="user-options">
                     <div className="row-wrapper">
                         <ul className='user-option-list'>
-                            <li><i className="bi bi-bell-fill"></i></li>
-                            <li><i className="bi bi-gear-fill"></i></li>
+                            <li><i className="bi bi-bell-fill notification"></i></li>
+                            <li><i className="bi bi-gear-fill settings"></i></li>
                         </ul>
                         <ul className='user-detail'>
-                            <li>userName</li>
+                            <li>Mrs. Dennis Schulist</li>
                             <li><img src={userIcon} width='50' alt="user-profile" /></li>
                         </ul>
                     </div>
