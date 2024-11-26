@@ -2,7 +2,7 @@ import React from 'react'
 import './navbar.css'
 import userIcon from '../../assets/user-img.jpg'
 
-const Navbar = () => {
+const Navbar = ({selectedUser}) => {
     return (
         <nav>
             <div className='navbar'>
@@ -25,7 +25,7 @@ const Navbar = () => {
                             <li><i className="bi bi-gear-fill settings"></i></li>
                         </ul>
                         <ul className='user-detail'>
-                            <li>Mrs. Dennis Schulist</li>
+                            <li>{selectedUser?.name}</li>
                             <li><img src={userIcon} width='50' alt="user-profile" /></li>
                         </ul>
                     </div>
