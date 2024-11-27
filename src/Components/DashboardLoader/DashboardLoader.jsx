@@ -4,7 +4,7 @@ import './dashboardLoader.css'
 const DashboardLoader = () => {
     return (
         <div className='dashboard-loader'>
-            <div className="custom-loader"></div>
+            <div className="dashboard-custom-loader"></div>
         </div>
     )
 }

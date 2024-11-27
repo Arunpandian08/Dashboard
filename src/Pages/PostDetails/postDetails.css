@@ -29,6 +29,24 @@
     position: relative;
 }
 
+.post-card .back-btn i{
+    position: absolute;
+    top: -130px;
+    left: 30px;
+    font-size: 1rem;
+    color: var(--primary-highlight-color);
+    padding: 5px 10px;
+    border: 2px solid var(--primary-highlight-color);
+    box-shadow: 0 0 5px var(--primary-highlight-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-card .back-btn i:hover{
+    color: var(--primary-font-color);
+}
+
 .post-card .edit-icon {
     position: absolute;
     top: -130px;
@@ -161,4 +179,10 @@
 .bookmarkBtn:active {
     transform: scale(0.95);
     transition-duration: 0.3s;
+}
+
+@media (max-width:550px) {
+    .back-btn i,.edit-icon{
+        top: -100px !important;
+    }
 }

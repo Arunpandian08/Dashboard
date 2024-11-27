@@ -1,16 +1,15 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react'
-import Loader from './Components/Loader/Loader'
 import { Routes, Route } from 'react-router-dom'
-import axios from 'axios'
+import { BASE_URL, fetchPostCommentsTodosDataFromAPI, fetchUsers } from './Services/apiServices';
 import ConfirmationPopup from './Components/ConfirmationPopup/ConfirmationPopup'
+import Loader from './Components/Loader/Loader'
 import { Flip, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const Navbar = lazy(() => import('./Components/Navbar/Navbar'))
 const Dashboard = lazy(() => import('./Pages/Dashboard/Dashboard'))
 const PostDetails = lazy(() => import('./Pages/PostDetails/PostDetails'))
-
-export const BASE_URL = 'https://jsonplaceholder.typicode.com/'
 
 const App = () => {
   const [userData, setUserData] = useState([])
@@ -32,43 +31,59 @@ const App = () => {
 
   const fetchUsersData = async () => {
     try {
-      const userResponse = await axios.get(`${BASE_URL}/users`)
-      setUserData(userResponse.data)
-      setSelectedUser(userResponse.data[0])
+      const userResponse = await fetchUsers();
+      setUserData(userResponse);
+      setSelectedUser(userResponse[0]);
     } catch (error) {
+      toast.error('Failed to fetch users data', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        theme: "dark",
+      });
       console.error('Failed to Fetch data!', error);
-
     }
   }
 
   const fetchPostCommentsTodosData = async (userId) => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      const [posts, comments, todos] = await Promise.all([
-        axios.get(`${BASE_URL}/posts?userId=${userId}`),
-        axios.get(`${BASE_URL}/comments`),
-        axios.get(`${BASE_URL}/todos`),
-      ])
+      const { posts, comments, todos } = await fetchPostCommentsTodosDataFromAPI(userId);
       setData({
-        posts: posts.data,
-        comments: comments.data.filter((comment) => posts.data.some((post) => post.id === comment.postId)),
-        todos: todos.data
-      })
+        posts,
+        comments: comments.filter((comment) => posts.some((post) => post.id === comment.postId)),
+        todos
+      });
     } catch (error) {
+      toast.error('Error fetching posts, comments, todos data', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        theme: "dark",
+      });
       console.error('Error fetching post,comments,todos data', error);
-    }
-    finally {
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
   }
 
   const handleDeletePost = (postId) => {
-    console.log('Id passed to set post and set popup open')
     setPostToDelete(postId)
     setIsPopupOpen(true)
   }
 
-
+  const TOAST_OPTION = {
+    position: "top-center",
+    autoClose: 300,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Flip,
+  }
+  
   const confirmToDelete = async () => {
     try {
       await axios.delete(`${BASE_URL}/posts/${postToDelete}`)
@@ -76,31 +91,12 @@ const App = () => {
         ...prevData,
         posts: prevData.posts.filter(post => post.id !== postToDelete)
       }))
-      toast.success('Post deleted Successfully!', {
-        position: "top-center",
-        autoClose: 300,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Flip,
-        });
-        
+      toast.success('Post deleted Successfully!', TOAST_OPTION);
+
       setIsPopupOpen(false)
     } catch (error) {
-      toast.error('Failed to delete the post', {
-        position: "top-center",
-        autoClose: 300,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Flip,
-        });
+      console.error('Error deleting post:', error.response ? error.response.data : error);
+      toast.error('Failed to delete the post', TOAST_OPTION);
     }
 
   }

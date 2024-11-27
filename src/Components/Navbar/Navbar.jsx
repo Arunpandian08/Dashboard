@@ -6,7 +6,7 @@ import userIcon from '../../assets/user-img.jpg'
 const Navbar = ({ selectedUser }) => {
     return (
         <nav>
-            <div className='navbar'>
+            <div className='navbar animate__animated animate__fadeInUp animate_slow'>
                 <div className='row-wrapper'>
                     <div className="navbar-brand">
                         <NavLink to='/' className="brand-name">DASHBOARD</NavLink>

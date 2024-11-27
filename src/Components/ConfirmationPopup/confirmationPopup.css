@@ -49,7 +49,7 @@
     margin: 0 0 20px;
 }
 
-.confirmation-popup .buttons{
+.confirmation-popup .pop-buttons{
     text-align: center;
 }
 
@@ -60,6 +60,8 @@
     color: var(--primary-font-color);
     font-weight: 600;
     cursor: pointer;
+    border-radius: var(--sm-border);
+    transition: all 0.3s ease-in-out;
 }
 
 .confirmation-popup button:nth-child(1){
@@ -72,4 +74,10 @@
 .confirmation-popup button:hover{
     background-color: var(--primary-highlight-color);
     background-color: var(--primary-highlight-color);
+}
+
+@media (max-width:769px) {
+    .confirmation-popup{
+        top: 15%;
+    }
 }

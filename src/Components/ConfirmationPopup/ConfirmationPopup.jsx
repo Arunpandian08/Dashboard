@@ -8,9 +8,9 @@ const ConfirmationPopup = ({ isPopupOpen, confirmToDelete, cancelDelete }) => {
     <div className="confirmation-popup-overlay">
       <div className="confirmation-popup">
         <p>Are you sure you want to delete this post?</p>
-        <div className="buttons">
-        <button onClick={confirmToDelete}>Yes</button>
-        <button onClick={cancelDelete}>No</button>
+        <div className="pop-buttons">
+          <button onClick={confirmToDelete}>Yes</button>
+          <button onClick={cancelDelete}>No</button>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import './postsList.css'
 import { useNavigate } from 'react-router-dom'
 
-const PostsList = ({ posts, handleDeletePost,isLoading }) => {
+const PostsList = ({ posts, handleDeletePost }) => {
     const navigate = useNavigate()
     const [currentPage, setCurrentPage] = useState(1)
     const postsPerPage = 8;
@@ -30,7 +30,7 @@ const PostsList = ({ posts, handleDeletePost,isLoading }) => {
 
     return (
         <div className='post-list'>
-            <div className="post-nav">
+            <div className="post-nav animate__animated animate__flipInX animate_slow">
                 <h4>Posts</h4>
                 <div className="navigator-icons">
                     <button className='prev' onClick={handlePrev} disabled={currentPage === 1}>
@@ -44,7 +44,7 @@ const PostsList = ({ posts, handleDeletePost,isLoading }) => {
             <div className='grid-container'>
                 {currentPosts.map((post) => {
                     return (
-                        <div className='card' key={post.id}>
+                        <div className='card animate__animated animate__fadeInUp animate_slower' key={post.id}>
                             <div className="icon">
                                 <i className="bi bi-camera-fill"></i>
                             </div>
@@ -55,12 +55,10 @@ const PostsList = ({ posts, handleDeletePost,isLoading }) => {
                                 >
                                     <strong>Title: </strong>{post.title}
                                 </p>
-                                <div className="buttons">
-                                    <button type="button" class="delete-button" onClick={()=>handleDeletePost(post.id)}>
-                                        <span class="button__text">Delete</span>
-                                        <span class="button__icon">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </span>
+                                <div className="Buttons">
+                                    <button className="Btn" onClick={() => handleDeletePost(post.id)}>
+                                        <i className="bi bi-trash3-fill"></i>
+                                        <span className="tooltip">Delete post</span>
                                     </button>
                                 </div>
                             </div>
