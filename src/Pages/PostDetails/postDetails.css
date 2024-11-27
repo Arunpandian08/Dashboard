@@ -1,0 +1,164 @@
+.post-details {
+    width: 100%;
+    height: calc(100svh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-details h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.post-card {
+    position: relative;
+    background-color: transparent !important;
+    box-shadow: 0 0 5px var(--primary-highlight-color);
+    border-radius: var(--md-border);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    width: min(600px, 90%);
+    height: min(400px, 100%);
+    backdrop-filter: blur(10px);
+}
+
+.card-body {
+    position: relative;
+}
+
+.post-card .edit-icon {
+    position: absolute;
+    top: -130px;
+    right: 30px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 2px solid var(--primary-highlight-color);
+    box-shadow: 0 0 5px var(--primary-highlight-color);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.edit-icon:active {
+    scale: 0.96
+}
+
+.edit-icon:hover::after {
+    position: absolute;
+    content: 'Edit';
+    top: -30px;
+    right: -50px;
+    background-color: var(--primary-highlight-color);
+    padding: 2px 15px;
+    border-radius: var(--sm-border);
+    color: var(--secondary-font-color);
+}
+
+.card-text {
+    text-indent: 50px;
+    padding: 10px;
+}
+
+.post-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-text-area {
+    margin: 0 10px;
+    width: min(600px, 90%);
+    height: min(400px, 100%);
+}
+
+.post-text-area {
+    border: 2px solid var(--primary-highlight-color);
+    outline: 1px solid var(--primary-highlight-color);
+    padding: 2px;
+    border-radius: var(--sm-border);
+}
+
+.buttons {
+    display: flex;
+    margin-top: 1rem;
+    gap: 20px;
+}
+
+.cancel-btn {
+    padding: 5px 20px;
+    border-radius: var(--lg-border);
+    border: 1px solid var(--primary-highlight-color);
+    background-color: var(--secondary-font-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: var(--primary-highlight-color);
+    color: var(--secondary-font-color);
+}
+
+.bookmarkBtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid var(--primary-highlight-color);
+    background-color: var(--secondary-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+}
+
+.IconContainer {
+    width: 30px;
+    height: 30px;
+    background: var(--primary-highlight-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: 0.3s;
+}
+
+.icon {
+    border-radius: 1px;
+    color: var(--secondary-font-color);
+}
+
+.button-text {
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-font-color);
+    z-index: 1;
+    transition-duration: 0.3s;
+    font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+    width: 90px;
+    transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .button-text {
+    transform: translate(10px);
+    width: 0;
+    font-size: 0;
+    transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+    transform: scale(0.95);
+    transition-duration: 0.3s;
+}

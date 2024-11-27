@@ -4,7 +4,7 @@ import UserSummary from './UserSummary/UserSummary'
 import PostsList from './PostsList/PostsList'
 import DashboardLoader from '../../Components/DashboardLoader/DashboardLoader'
 
-const Dashboard = ({ userData, setSelectedUser, data, isLoading }) => {
+const Dashboard = ({ userData, setSelectedUser, data, isLoading,handleDeletePost }) => {
     
     const handleSelect = useCallback((user) => {
         if (user === setSelectedUser) return;
@@ -32,7 +32,7 @@ const Dashboard = ({ userData, setSelectedUser, data, isLoading }) => {
             ) : (
                 <>
                     <UserSummary data={data} />
-                    <PostsList posts={data.posts} />
+                    <PostsList posts={data.posts} handleDeletePost={handleDeletePost} isLoading={isLoading} />
                 </>
             )}
         </div>

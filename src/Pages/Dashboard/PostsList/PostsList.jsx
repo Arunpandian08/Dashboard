@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import './postsList.css'
 import { useNavigate } from 'react-router-dom'
 
-const PostsList = ({ posts }) => {
+const PostsList = ({ posts, handleDeletePost,isLoading }) => {
     const navigate = useNavigate()
     const [currentPage, setCurrentPage] = useState(1)
     const postsPerPage = 8;
@@ -56,8 +56,11 @@ const PostsList = ({ posts }) => {
                                     <strong>Title: </strong>{post.title}
                                 </p>
                                 <div className="buttons">
-                                    <button className="delete">
-                                        delete Post
+                                    <button type="button" class="delete-button" onClick={()=>handleDeletePost(post.id)}>
+                                        <span class="button__text">Delete</span>
+                                        <span class="button__icon">
+                                            <i class="bi bi-trash3-fill"></i>
+                                        </span>
                                     </button>
                                 </div>
                             </div>

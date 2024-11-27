@@ -1,0 +1,75 @@
+.confirmation-popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.864);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    transition: all 0.2s ease;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.confirmation-popup {
+    position: relative;
+    background: var(--secondary-font-color);
+    padding: 20px;
+    border-radius: var(--md-border); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;
+    perspective: 1000px;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.confirmation-popup p{
+    margin: 0 0 20px;
+}
+
+.confirmation-popup .buttons{
+    text-align: center;
+}
+
+.confirmation-popup button{
+    margin-right: 10px;
+    padding: 5px 15px;
+    border: 2px solid var(--primary-highlight-color);
+    color: var(--primary-font-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.confirmation-popup button:nth-child(1){
+    background-color: #b1b2b5;
+}
+.confirmation-popup button:nth-child(2){
+    background-color: var(--secondary-font-color);
+}
+
+.confirmation-popup button:hover{
+    background-color: var(--primary-highlight-color);
+    background-color: var(--primary-highlight-color);
+}
